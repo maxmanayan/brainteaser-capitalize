@@ -11,8 +11,8 @@ end
 def brainteaser
   cap_fox = @fox.split(' ')
   new_arr = cap_fox.map do |word|
-    first_letter = word.split('').shift.upcase
-    letters = word.split('').drop(1)
+    first_letter = word.split('').shift.swapcase
+    letters = word.downcase.split('').drop(1)
     letters.unshift(first_letter).join('')
   end
   new_arr.join(' ')
@@ -20,4 +20,6 @@ end
 
 p @fox
 p brainteaser
+
+# p @fox.swapcase
 
